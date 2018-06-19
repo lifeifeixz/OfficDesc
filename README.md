@@ -27,12 +27,12 @@ bootstrap/<br/>
 │   ├── sq88gxcxappbxfa.html<br/>
 │   └── 1.html<br/>
 
-common:公共的js、css文件
-css：第三方css、js包
-guide:使用规则
-images:页面中使用的图片
-rule:使用条款
-appDownload.html:app下载界面
-common.js:页面的控制逻辑
-index.html:官网首页
-index2.html:官网移动端主页
+common:公共的js、css文件<br/>
+css：第三方css、js包<br/>
+guide:使用规则<br/>
+images:页面中使用的图片<br/>
+rule:使用条款<br/>
+appDownload.html:app下载界面<br/>
+common.js:页面的控制逻辑<br/>
+index.html:官网首页<br/>
+index2.html:官网移动端主页<br/>
