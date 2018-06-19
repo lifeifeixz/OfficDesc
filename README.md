@@ -2,30 +2,30 @@
 用户云端存储官网、使用手册之类的静态文件。<br/>
 <strong>文件结构:</strong>
 
-bootstrap/
-├── common/
-├── guide/
-│   ├── css/
-│   ├── problems/
-│   ├── rent/
-│   ├   ├───
-│   ├── 1.html
-│   ├── 2.html
-│   ├── 3.html
-│   ├── 4.html
-├── images/
-├── rule/
-│   ├── 1.html
-│   ├── 2.html
-│   ├── 3.html
-│   ├── 4.html
-│   ├── baoxiantiaokuan2.html
-│   ├── baoxiantiaokuan_main.html
-│   ├── main.html
-│   ├── shangcanjiandingbiaozhun.html
-│   ├── shsbzwhlldjs88gxcxappbxfajlplc.html
-│   ├── sq88gxcxappbxfa.html
-│   └── 1.html
+bootstrap/<br/>
+├── common/<br/>
+├── guide/<br/>
+│   ├── css/<br/>
+│   ├── problems/<br/>
+│   └── rent/<br/>
+│       ├───<br/>
+│   ├── 1.html<br/>
+│   ├── 2.html<br/>
+│   ├── 3.html<br/>
+│   ├── 4.html<br/>
+├── images/<br/>
+├── rule/<br/>
+│   ├── 1.html<br/>
+│   ├── 2.html<br/>
+│   ├── 3.html<br/>
+│   ├── 4.html<br/>
+│   ├── baoxiantiaokuan2.html<br/>
+│   ├── baoxiantiaokuan_main.html<br/>
+│   ├── main.html<br/>
+│   ├── shangcanjiandingbiaozhun.html<br/>
+│   ├── shsbzwhlldjs88gxcxappbxfajlplc.html<br/>
+│   ├── sq88gxcxappbxfa.html<br/>
+│   └── 1.html<br/>
 
 common:公共的js、css文件
 css：第三方css、js包
