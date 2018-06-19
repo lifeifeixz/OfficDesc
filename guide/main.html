@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>新手指南</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				background: #f0f0f0;
+			}
+			
+			.box {
+				width: 100%;
+				padding-top: 20px;
+			}
+			
+			.box>.xy {
+				position: relative;
+				padding-left: 4%;
+				padding-right: 5%;
+				background: #ffffff;
+				border-bottom: 1px solid #e6e6e6;
+				height: 50px;
+				line-height: 50px;
+				color: #7a7a7a;
+				overflow: hidden;
+			}
+			
+			.box>.xy:hover {
+				background: #e4e4e4;
+			}
+			
+			.box>.xy>.text {
+				float: left;
+			}
+			
+			.box>.xy>.do {
+				/*float: right;*/
+				position: absolute;
+				right: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="box">
+			<div class="xy pool" onclick="go('baoxiantiaokuan.html')">
+				<div class="text">保险条款</div>
+				<div class="do"> &gt; </div>
+			</div>
+			<div class="xy pool" onclick="go('jifeiguize.html')">
+				<div class="text">计费规则</div>
+				<div class="do"> &gt; </div>
+			</div>
+			<!--<div class="xy" onclick="go('jiebanguize.html')">
+				<div class="text">结伴规则</div>
+				<div class="do"> &gt; </div>
+			</div>-->
+			<div class="xy pool" onclick="go('pincheguizeshuoming.html')">
+				<div class="text">拼车规则说明</div>
+				<div class="do"> &gt; </div>
+			</div>
+			<!--<div class="xy" onclick="go('xinshougonglve/chezhuqiangdangonglve.html')">
+				<div class="text">新手--车主抢单攻略</div>
+				<div class="do"> &gt; </div>
+			</div>
+			<div class="xy" onclick="go('xinshougonglve/chengkegonglve.html')">
+				<div class="text">新手--乘客叫车攻略</div>
+				<div class="do"> &gt; </div>
+			</div>
+			<div class="xy" onclick="go('problems/car.html')">
+				<div class="text">常见问题--车主篇</div>
+				<div class="do"> &gt; </div>
+			</div>
+			<div class="xy" onclick="go('problems/passenger.html')">
+				<div class="text">常见问题--乘客篇</div>
+				<div class="do"> &gt; </div>
+			</div>-->
+			<div class="xy pool" onclick="go('problems/pinchepian.html')">
+				<div class="text">拼车常见问题</div>
+				<div class="do"> &gt; </div>
+			</div>
+			<div class="xy shuttle" onclick="go('problems/banchepian.html')">
+				<div class="text">班车常见问题</div>
+				<div class="do"> &gt; </div>
+			</div>
+			<div class="xy rent" onclick="go('problems/zuchepian.html')">
+				<div class="text">租车常见问题</div>
+				<div class="do"> &gt; </div>
+			</div>
+
+			<div style="width: 80%;margin: 0 auto;font-size: 12Px;font-weight:600;color: #A8A8A8;margin-top: 10%;">
+				服务电话:&nbsp;021-22011427<br /> 服务时间:&nbsp;周一至周五09:30 - 18:30<br /> 客服邮箱:&nbsp;service@88gongxiang.com </div>
+		</div>
+	</body>
+
+	<!--JavaScript代码块-->
+	<script type="text/javascript">
+		(function() {
+
+			var request = {
+				/**
+				 * 获取url中的参数、目前只支持GET请求类型。
+				 * @auther flys·Li
+				 * @since V1.0
+				 */
+				getParameter: function(name) {
+					var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+					var r = window.location.search.substr(1).match(reg);
+					if(r != null) return unescape(r[2]);
+					return null;
+				}
+			}
+
+			window.request = request;
+
+		})()
+
+		function go(page) {
+			window.location.href = page;
+		}
+		window.onload = function() {
+			var business = request.getParameter("business");
+			if(business != null) {
+				var businessArr = business.split(",");
+				displayByClass(businessArr, "none");
+			}
+		}
+
+		/**
+		 * 根据class设置元素的显示与隐藏
+		 * @param {Object} cls 可以是一个字符，也可以是一个数组
+		 * @param {Object} sty	block、none
+		 */
+		function displayByClass(cls, sty) {
+			var elements = [];
+			if(Array.isArray(cls)) {
+				for(var i = 0; i < cls.length; i++) {
+					elements.push(cls[i]);
+				}
+			} else {
+				elements = elements.push(cls);
+			}
+			console.log(elements.length)
+			for(var i = 0; i < elements.length; i++) {
+				var classes = document.getElementsByClassName(elements[i]);
+				for(var j = 0; j < classes.length; j++) {
+					classes[j].style.display = sty;
+				}
+			}
+		}
+	</script>
+
+</html>

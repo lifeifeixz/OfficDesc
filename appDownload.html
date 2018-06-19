@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>App下载</title>
+
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="css/mobile/flys.css">
+		<!-- css -->
+		<style type="text/css">
+			body {
+				font-family: "Microsoft JhengHei Light";
+			}
+			
+			a {
+				outline: none;
+			}
+			
+			.box {
+				width: 90%;
+				/* 	border:1px solid #ccc; */
+				margin: 4% 0 0 5%;
+				text-align: center;
+				padding-top: 8%;
+			}
+			
+			.center {
+				text-align: center;
+				margin: 0 auto;
+			}
+			
+			.href:hover {
+				text-decoration: underline;
+			}
+			
+			div,
+			p,
+			img {}
+			
+			.tx {
+				/*消息提醒的内容*/
+				position: fixed;
+				display: none;
+				top: 220;
+				left: 0;
+				z-index: 998;
+			}
+			
+			.beijing {
+				/*消息提醒的背景*/
+				position: fixed;
+				display: none;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 997;
+			}
+			
+			.closeTX {
+				/*消息提醒的关闭按钮*/
+				position: fixed;
+				display: none;
+				top: 50%;
+				left: 42%;
+				z-index: 998;
+			}
+		</style>
+		<!-- JavaScript -->
+		<script type="text/javascript">
+			var _hmt = _hmt || [];
+			(function() {
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?a16afeac23b985a4a8deb7c52bbcf45f";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+			window.onload = function() {
+				var w = document.documentElement ? document.documentElement.clientHeight : document.body.clientHeight;
+				document.getElementById("box").height = w + 'px';
+
+				if(is_weixn()) { //检测到浏览器为微信内核，需要显示提醒界面
+					document.getElementById("tx").style.display = "block";
+					document.getElementById("beijing").style.display = "block";
+					document.getElementById("closeTX").style.display = "block";
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="box" class="box">
+			<img src="images/weixin-tip.png" id="tx" width="100%" class="tx remind" />
+			<img src="images/beijing.png" id="beijing" class="beijing remind" />
+			<img src="images/closeTX.png" onclick="document.getElementById('tx').style.display = 'none';document.getElementById('beijing').style.display = 'none';document.getElementById('closeTX').style.display = 'none';" id="closeTX" class="closeTX" />
+			<img alt="" class="" src="images/logo@2x.png" width="30%">
+			<p class="center" style="max-width:70%;font-size:12px;color:#a3a3a3;">
+				<!-- 目前app暂时只支持IOS系统版本,并且您的操作系统必须是IOS7.0以上 -->
+			</p>
+			<p class="center" class="href" style="color:#a3a3a3;max-width:60%;font-size:13px;margin-top:23%;">
+				下载之后可以继续使用您的手机号码注册
+			</p>
+			<a onclick="appDownload()" style="width:80%;margin-top:4%;overflow: hidden;" href="#" class="button button-raised button-primary button-pill"> APP 下载</a>
+			<p>
+				<a class="href" href="http://www.88gongxiang.com/guide/main.html" style="font-size:12px;height:2px;">使用请遵守相关协议>></a>
+			</p>
+		</div>
+
+		<footer style="position:fixed;bottom:0px;width:100%;height:50px;" class="center">
+			<p style="font-size:12px;">&copy;上汽集团工会版权所有<br></p>
+		</footer>
+	</body>
+
+	<script>
+		/**
+		 *检测是否是微信内核的浏览器
+		 *如果为true，则提醒用浏览器打开
+		 *如果为false，则默认不做任何操作
+		 */
+		function is_weixn() {
+			var ua = navigator.userAgent.toLowerCase();
+			if(ua.match(/MicroMessenger/i) == "micromessenger") {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		/**
+		 * 判断移动设备操作系统类型
+		 */
+		function checkSystem() {
+			var systemType = null;
+			var u = navigator.userAgent;
+			if(u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) { //安卓手机
+				systemType = "Android";
+			} else if(u.indexOf('iPhone') > -1) { //苹果手机
+				systemType = "Apple";
+			} else if(u.indexOf('Windows Phone') > -1) { //winphone手机
+				systemType = "WindowPhone";
+			}
+			return systemType;
+		}
+
+		/**
+		 * 地址跳转
+		 */
+		function appDownload() {
+			var sysType = checkSystem();
+			switch(sysType) {
+				case "Android":
+					//					newestVersionNumber();
+					location.href = "http://api.88gongxiang.com/app/88GX_Sources_GX88_1.4.1-release.apk";
+					break;
+				case "Apple":
+					location.href = "https://itunes.apple.com/cn/app/yue-le-meyueleme-yue-yi-dun/id1193922120?l=cn&mt=8";
+					break;
+				case "WindowPhone":
+					alert("暂时没有提供WindowPhone操作系统的app版本");
+					break;
+			}
+		}
+
+		/**
+		 * 获取app最新版本号
+		 */
+		function newestVersionNumber() {
+			var url = "http://192.168.95.13:8019/api/v1/notice/newestVersionNumber?deviceType=android";
+			ajax(url, function(text) {
+				var json = eval('(' + text + ')');
+				var newVersionNumber = json.content.version;
+				console.log("http://api.88gongxiang.com/app/trip-v" + newVersionNumber + ".apk");
+				location.href = "http://api.88gongxiang.com/app/trip-v" + newVersionNumber + ".apk";
+			});
+		}
+
+		//关闭消息提醒操作
+		function closeTX() {
+			document.getElementById('tx').style.display = 'none';
+			document.getElementById('beijing').style.display = 'none';
+			document.getElementById('closeTX').style.display = 'none';
+		}
+
+		//ajax请求
+		function ajax(url, successFunc) {
+			var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+			xhr.open("POST", url, true);
+			xhr.onreadystatechange = function() {
+				if(xhr.readyState == 4) {
+					if(xhr.status == 200) {
+						successFunc(xhr.responseText);
+					} else {
+						alert("服务器返回错误！");
+					}
+				}
+			};
+			xhr.send();
+		}
+	</script>
+</html>

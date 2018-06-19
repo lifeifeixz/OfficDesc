@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>租车使用手册</title>
+		<style>
+			body {
+				margin: 0;
+				padding: 0;
+				background: #f6f6f6;
+			}
+			
+			.box {
+				/*width: 96%;*/
+				margin: 0 auto;
+				padding-top: 15px;
+				padding-left: 15px;
+				padding-right: 15px;
+				padding-bottom: 50px;
+			}
+			
+			.box>.xy {
+				position: relative;
+				padding-left: 20px;
+				padding-right: 5%;
+				background: #ffffff;
+				/*border-bottom: 1px solid #e6e6e6;*/
+				height: 80px;
+				line-height: 80px;
+				color: #7a7a7a;
+				overflow: hidden;
+				font-size: 18px;
+				margin-bottom: 10px;
+				border-radius: 3px;
+			}
+			
+			.box>.xy:hover {
+				/*background: #e4e4e4;*/
+				color: #4bb4e9;
+			}
+			
+			.box>.xy>.text {
+				float: left;
+			}
+			
+			.box>.xy>.do {
+				/*float: right;*/
+				position: absolute;
+				width: 8px;
+				top: 2px;
+				right: 18px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="box">
+			<div class="xy" onclick="go('billRules.html')">
+				<div class="text">租车基本计费规则</div>
+				<div class="do"> <img width="100%" src="imgs/jiantou_gray@2x.png" /></div>
+			</div>
+			<div class="xy" onclick="go('useCondition.html')">
+				<div class="text">租车使用条件</div>
+				<div class="do"> <img width="100%" src="imgs/jiantou_gray@2x.png" /></div>
+			</div>
+			<div class="xy" onclick="go('subScribe.html')">
+				<div class="text">如何预约、用车</div>
+				<div class="do"> <img width="100%" src="imgs/jiantou_gray@2x.png" /></div>
+			</div>
+			<div class="xy" onclick="go('returnCar.html')">
+				<div class="text">如何还车</div>
+				<div class="do"> <img width="100%" src="imgs/jiantou_gray@2x.png" /></div>
+			</div>
+			<div class="xy" onclick="go('returnCarProblemSolution.html')">
+				<div class="text">还车问题处理办法</div>
+				<div class="do"> <img width="100%" src="imgs/jiantou_gray@2x.png" /></div>
+			</div>
+			<div class="xy" onclick="go('lowOilAndAddOilProcess.html')">
+				<div class="text">低油量报警及加油流程</div>
+				<div class="do"> <img width="100%" src="imgs/jiantou_gray@2x.png" /></div>
+			</div>
+			<div class="xy" onclick="go('fetchCarAndParkingFeeReport.html')">
+				<div class="text">取车停车费上报</div>
+				<div class="do"> <img width="100%" src="imgs/jiantou_gray@2x.png" /></div>
+			</div>
+			<div class="xy" onclick="go('peccancyReportAndHandle.html')">
+				<div class="text">违章上报、处理</div>
+				<div class="do"> <img width="100%" src="imgs/jiantou_gray@2x.png" /></div>
+			</div>
+			<div class="xy" onclick="go('accidentReportAndHandle.html.html')">
+				<div class="text">事故上报、处理</div>
+				<div class="do"> <img width="100%" src="imgs/jiantou_gray@2x.png" /></div>
+			</div>
+			<div class="xy" onclick="go('insuranceClauses.html')">
+				<div class="text">保险条款说明</div>
+				<div class="do"> <img width="100%" src="imgs/jiantou_gray@2x.png" /></div>
+			</div>
+
+			<!--<div style="width: 80%;margin: 0 auto;font-size: 12Px;font-weight:600;color: #A8A8A8;margin-top: 10%;">
+				服务电话:&nbsp;021-22011264<br /> 服务时间:&nbsp;周一至周五09:30 - 18:30<br /> 客服邮箱:&nbsp;service@88gongxiang.com </div>-->
+		</div>
+	</body>
+
+	<!--JavaScript代码块-->
+	<script type="text/javascript">
+		function go(page) {
+			window.location.href = page;
+		}
+	</script>
+
+</html>

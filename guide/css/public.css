@@ -1,0 +1,40 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-size: 17px;
+	font-family: "微软雅黑";
+	/*background: #f6f6f6;*/
+}
+p{
+	line-height: 20px;
+}
+.box{
+	width: 94%;
+	margin: 3%;
+	padding-bottom: 50px;
+}	
+.head-title{
+	margin-bottom: 2px;
+}
+.content{
+	
+}
+
+.btn {
+	outline: none;
+	background: green;
+	padding: 10px 0 10px 0;
+	min-width: 80%;
+	color: #fff;
+	margin: 20px 10% 20px 10%;
+	border: 0px;
+	border-radius: 5px;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	background: #409EFF;
+}
+img{
+	width: 96%;
+	margin-left: 2%;
+}

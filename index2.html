@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>88共享-主页</title>
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<style type="text/css">
+			body{
+				font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+				margin: 0;
+				padding: 0;    
+			}
+			.top{
+				width:100%;
+				height: 90px;
+				line-height: 90px;
+			}
+			
+			.company_name{
+				float: left;
+			}
+			.top>.logo{
+			}
+			.top>.company_name{
+				line-height: 90px;
+			    padding-left: 20px;
+			    font-size: 24px;
+			    color: #5fafff;
+				
+			}
+			
+			/*中间层背景*/
+			.center{
+				width: 100%;
+			}
+			.blue-beijing{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background: #5fafff;
+				opacity: 0.6;
+				top: 0;
+				left: 0;
+				z-index: 100;
+			}
+			.white-bag{
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				z-index: 200;
+			}
+			.biaoyu{
+				position:absolute;
+			    top: 5%;
+			    right: 2%;
+			    font-size: 20px;
+			    color: white;
+			    font-weight: 500;
+			}
+			.shou{
+				position: absolute;
+			    top:5%;
+			    left: 260px;
+			    margin-left: -300px;
+			    width: 60%;
+			}
+			.choce88chuxing{
+				
+			    background-color: #5fafff;
+			    
+			    margin-bottom: 30px;
+			}
+			.third-til{
+				width: 100%;
+			    font-size: 14px;
+			   
+			    text-align: center;
+			    color: aliceblue;
+			    font-weight: 600;
+			}
+			.text{
+				font-size: 12px;
+			    margin-top: 20px;
+			    text-align: center;
+			    margin-bottom: 40px;
+			    color: aliceblue;
+			    padding-bottom: 10px;
+			    
+			}
+
+			.tuwen{
+				
+				margin: 0 auto;
+				width: 100px;
+				
+			}
+			.logo{
+				 margin: 0 auto;
+				 width: 54%;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			//检测浏览器窗口的大小
+			//var width = document.body.clientWidth;
+		</script>
+	</head>
+	<body>
+		<div class="top">
+			<div class="logo">
+				<img src="images/logo_heng.png" width="100%">
+			</div>
+			<div class="company_name">
+				<!--88共享出行-->
+			</div>
+			<div style="clear: both;">
+				
+			</div>
+		</div>
+		
+		<!--中间背景层，手，两个二维码-->
+		<div class="center">
+			<img src="images/backgroundTitle.png" onclick="downloadApp()" width="100%" class="img-responsive"/>
+		</div>
+		
+		<!--轮播图-->
+		<div class="lunbo" style="position: relative;">
+			<div style="position: absolute;top: 0;left: 0;width:100%;text-align: center;">
+				<h3 style="color: #5fafff;font-weight: bolder;">拼车出行</h3>
+				<p style="color: #5fafff;font-weight: bolder;">"小伙伴一起拼车 ，用这个功能可以一键安排行程"</p>
+			</div>
+			<img src="images/banner0.jpg" class="img-responsive"/>
+		</div>
+		
+		<!--为什么选择88出行-->
+		<div class="choce88chuxing">
+			<div class="third-til" style="padding: 20px;">
+				为什么选择88出行
+			</div>
+			<div class="pic_list" style="text-align: center;">
+				
+				<table width="100%">
+					<tr>
+						<td width="33.3%" align="center">
+							<div class="tuwen" style="">
+								<div class="pic"style="margin: 0 auto;">
+									<img src="images/tb01.png" width="50"/>
+								</div>
+								
+							</div>
+						</td>
+						<td width="33.3%" align="center">
+							<div class="tuwen">
+								<div class="pic"style="margin: 0 auto;">
+									<img src="images/tb02.png"width="50"/>
+								</div>
+								
+							</div>
+						</td>
+						<td width="33.3%" align="center">
+							<div class="tuwen">
+								<div class="pic" style="margin: 0 auto;">
+									<img src="images/tb03.png"width="50"/>
+								</div>
+								
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="top">
+							<div class="text" style="padding:0px 5px; 0 5px;">
+								<h5>诚信可靠</h5>
+								<p>司机车辆均有完整信息认证，杜绝风险</p>
+							</div>
+						</td>
+						<td>
+							<div class="text">
+								<h5>保障完备</h5>
+								<p>专业车辆保养维护系统，使用无忧</p>
+							</div>
+						</td>
+						<td valign="top">
+							<div class="text">
+								<h5>绿色环保</h5>
+								<p>让出行更环保更高效</p>
+							</div>
+						</td>
+					</tr>
+				</table>
+				
+				
+				
+				
+				
+			</div>
+		</div>
+		
+		<div style="margin-bottom: 20px;">
+			
+			<!--<table width="100%">
+				<tr>
+					<td width="50%" align="center">
+						<div style="width: 60%;">
+							<div class="ma_pic">
+								<img src="images/andri02.png" width="200" class="img-responsive"/>
+							</div>
+							
+							<div >
+								<a href="http://api.88gongxiang.com/app/trip-v1.0.0.apk"><img src="images/andri-down.png" width="200" class="img-responsive" /></a>
+							</div>
+						</div>
+					</td>
+					<td width="50%" align="center">
+						<div style="width: 60%;"" >
+							<div class="ma_pic">
+								<img src="images/apple02.png" width="200" class="img-responsive" />
+							</div>
+						
+							<div>
+								<a href="https://itunes.apple.com/cn/app/yue-le-meyueleme-yue-yi-dun/id1193922120?l=cn&mt=8"><img src="images/apple-down.png" width="200" class="img-responsive"/></a>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>-->
+			<div style="width: 96%;">
+				<img src="images/chuxing3(1).png" onclick="downloadApp()" width="100%"/>
+				
+			</div>
+			
+			
+			
+			
+			<div style="clear: both;">
+				
+			</div>
+		</div>
+		
+		<div class="foot" style="background: #5fafff;padding:10px;color: #ffffff;">
+			<div class="tel" style="text-align: center;">©2016&nbsp;&nbsp;&nbsp;&nbsp;上汽集团工会版权所有&nbsp;&nbsp;&nbsp;&nbsp;<br>备案号：沪ICP备16048789号</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		function downloadApp(){
+			location.href="http://api.88gongxiang.com/app/88GX_Sources_GX88_1.4.1-release.apk";
+		}
+	</script>
+</html>
