@@ -1,41 +1,44 @@
-
 <!DOCTYPE html>
+
 <html>
+
 	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 		<title>88共享-主页</title>
 		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<style type="text/css">
-			body{
-				font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+			body {
+				font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
 				margin: 0;
-				padding: 0;    
+				padding: 0;
 			}
-			.top{
-				width:100%;
+			
+			.top {
+				width: 100%;
 				height: 90px;
 				line-height: 90px;
 			}
 			
-			.company_name{
+			.company_name {
 				float: left;
 			}
-			.top>.logo{
-			}
-			.top>.company_name{
-				line-height: 90px;
-			    padding-left: 20px;
-			    font-size: 24px;
-			    color: #5fafff;
-				
-			}
 			
+			.top>.logo {}
+			
+			.top>.company_name {
+				line-height: 90px;
+				padding-left: 20px;
+				font-size: 24px;
+				color: #5fafff;
+			}
 			/*中间层背景*/
-			.center{
+			
+			.center {
 				width: 100%;
 			}
-			.blue-beijing{
+			
+			.blue-beijing {
 				position: absolute;
 				width: 100%;
 				height: 100%;
@@ -45,7 +48,8 @@
 				left: 0;
 				z-index: 100;
 			}
-			.white-bag{
+			
+			.white-bag {
 				position: absolute;
 				width: 100%;
 				height: 100%;
@@ -53,62 +57,73 @@
 				left: 0;
 				z-index: 200;
 			}
-			.biaoyu{
-				position:absolute;
-			    top: 5%;
-			    right: 2%;
-			    font-size: 20px;
-			    color: white;
-			    font-weight: 500;
-			}
-			.shou{
+			
+			.biaoyu {
 				position: absolute;
-			    top:5%;
-			    left: 260px;
-			    margin-left: -300px;
-			    width: 60%;
+				top: 5%;
+				right: 2%;
+				font-size: 20px;
+				color: white;
+				font-weight: 500;
 			}
-			.choce88chuxing{
-				
-			    background-color: #5fafff;
-			    
-			    margin-bottom: 30px;
+			
+			.shou {
+				position: absolute;
+				top: 5%;
+				left: 260px;
+				margin-left: -300px;
+				width: 60%;
 			}
-			.third-til{
+			
+			.choce88chuxing {
+				background-color: #5fafff;
+				margin-bottom: 30px;
+			}
+			
+			.third-til {
 				width: 100%;
-			    font-size: 14px;
-			   
-			    text-align: center;
-			    color: aliceblue;
-			    font-weight: 600;
+				font-size: 14px;
+				text-align: center;
+				color: aliceblue;
+				font-weight: 600;
 			}
-			.text{
+			
+			.text {
 				font-size: 12px;
-			    margin-top: 20px;
-			    text-align: center;
-			    margin-bottom: 40px;
-			    color: aliceblue;
-			    padding-bottom: 10px;
-			    
+				margin-top: 20px;
+				text-align: center;
+				margin-bottom: 40px;
+				color: aliceblue;
+				padding-bottom: 10px;
 			}
-
-			.tuwen{
-				
+			
+			.tuwen {
 				margin: 0 auto;
 				width: 100px;
-				
 			}
-			.logo{
-				 margin: 0 auto;
-				 width: 54%;
+			
+			.logo {
+				margin: 0 auto;
+				width: 54%;
+			}
+			
+			.icp {
+				text-decoration: none;
+				color: #fff;
+			}
+			
+			.icp :hover {
+				text-underline: inherit;
+				color: #5fafff;
 			}
 		</style>
-		
+
 		<script type="text/javascript">
 			//检测浏览器窗口的大小
 			//var width = document.body.clientWidth;
 		</script>
 	</head>
+
 	<body>
 		<div class="top">
 			<div class="logo">
@@ -118,55 +133,55 @@
 				<!--88共享出行-->
 			</div>
 			<div style="clear: both;">
-				
+
 			</div>
 		</div>
-		
+
 		<!--中间背景层，手，两个二维码-->
 		<div class="center">
-			<img src="images/backgroundTitle.png" onclick="downloadApp()" width="100%" class="img-responsive"/>
+			<img src="images/backgroundTitle.png" onclick="downloadApp()" width="100%" class="img-responsive" />
 		</div>
-		
+
 		<!--轮播图-->
 		<div class="lunbo" style="position: relative;">
 			<div style="position: absolute;top: 0;left: 0;width:100%;text-align: center;">
 				<h3 style="color: #5fafff;font-weight: bolder;">拼车出行</h3>
 				<p style="color: #5fafff;font-weight: bolder;">"小伙伴一起拼车 ，用这个功能可以一键安排行程"</p>
 			</div>
-			<img src="images/banner0.jpg" class="img-responsive"/>
+			<img src="images/banner0.jpg" class="img-responsive" />
 		</div>
-		
+
 		<!--为什么选择88出行-->
 		<div class="choce88chuxing">
 			<div class="third-til" style="padding: 20px;">
 				为什么选择88出行
 			</div>
 			<div class="pic_list" style="text-align: center;">
-				
+
 				<table width="100%">
 					<tr>
 						<td width="33.3%" align="center">
 							<div class="tuwen" style="">
-								<div class="pic"style="margin: 0 auto;">
-									<img src="images/tb01.png" width="50"/>
+								<div class="pic" style="margin: 0 auto;">
+									<img src="images/tb01.png" width="50" />
 								</div>
-								
-							</div>
-						</td>
-						<td width="33.3%" align="center">
-							<div class="tuwen">
-								<div class="pic"style="margin: 0 auto;">
-									<img src="images/tb02.png"width="50"/>
-								</div>
-								
+
 							</div>
 						</td>
 						<td width="33.3%" align="center">
 							<div class="tuwen">
 								<div class="pic" style="margin: 0 auto;">
-									<img src="images/tb03.png"width="50"/>
+									<img src="images/tb02.png" width="50" />
 								</div>
-								
+
+							</div>
+						</td>
+						<td width="33.3%" align="center">
+							<div class="tuwen">
+								<div class="pic" style="margin: 0 auto;">
+									<img src="images/tb03.png" width="50" />
+								</div>
+
 							</div>
 						</td>
 					</tr>
@@ -191,16 +206,12 @@
 						</td>
 					</tr>
 				</table>
-				
-				
-				
-				
-				
+
 			</div>
 		</div>
-		
+
 		<div style="margin-bottom: 20px;">
-			
+
 			<!--<table width="100%">
 				<tr>
 					<td width="50%" align="center">
@@ -228,25 +239,25 @@
 				</tr>
 			</table>-->
 			<div style="width: 96%;">
-				<img src="images/chuxing3(1).png" onclick="downloadApp()" width="100%"/>
-				
+				<img src="images/chuxing3(1).png" onclick="downloadApp()" width="100%" />
+
 			</div>
-			
-			
-			
-			
+
 			<div style="clear: both;">
-				
+
 			</div>
 		</div>
-		
+
 		<div class="foot" style="background: #5fafff;padding:10px;color: #ffffff;">
-			<div class="tel" style="text-align: center;">©2016&nbsp;&nbsp;&nbsp;&nbsp;上汽集团工会版权所有&nbsp;&nbsp;&nbsp;&nbsp;<br>备案号：沪ICP备16048789号</div>
+			<div class="tel" style="text-align: center;">©2016&nbsp;&nbsp;&nbsp;&nbsp;上汽集团工会版权所有&nbsp;&nbsp;&nbsp;&nbsp;<br>备案号：
+				<a class="icp" href="http://www.miitbeian.gov.cn">沪ICP备16048789号</a>
+			</div>
 		</div>
 	</body>
 	<script type="text/javascript">
-		function downloadApp(){
-			location.href="http://api.88gongxiang.com/app/88GX_Sources_GX88_1.4.1-release.apk";
+		function downloadApp() {
+			location.href = "http://api.88gongxiang.com/app/88GX_Sources_GX88_1.6.0-release.apk";
 		}
 	</script>
+
 </html>

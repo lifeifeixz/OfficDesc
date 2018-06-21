@@ -1,0 +1,18 @@
+/*微信端样式*/
+.v-btn{
+	outline: none;
+	padding:5px 20px 5px 20px;
+	background: #6bcdfd;
+	border: 0px;
+	color: #fff;
+	height: 46px;
+	font-size: 16px;
+}
+
+.v-btn-lg{
+	width: 90%;
+}
+
+input[disabled="disabled"]{
+	background: #cccccc;
+}

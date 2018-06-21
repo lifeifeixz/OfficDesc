@@ -1,0 +1,13 @@
+.btn {
+	outline: none;
+	background: green;
+	padding: 10px 0 10px 0;
+	min-width: 80%;
+	color: #fff;
+	margin: 20px 10% 20px 10%;
+	border: 0px;
+	border-radius: 5px;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+}

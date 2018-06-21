@@ -1,0 +1,196 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+  font-size:14px;
+  margin:0;
+  padding:0;
+	}
+a{
+    text-decoration:none;
+    color:#5fafff
+}
+a:link{
+text-decoration:none;
+}
+a:visited{
+text-decoration:none;
+}
+a:hover{
+text-decoration:none;
+}
+a:active{
+text-decoration:none;
+}
+.top{
+	width:100%;
+	height:90px;
+	}
+.logo{
+	width:52px;
+	height:52px;
+	margin-left:20%;
+	margin-top:19px;
+	float:left;
+	}	
+.title{
+	float:left;
+	line-height:90px;
+	padding-left:30px;
+	font-size:24px;
+	color:#5fafff
+	}
+.first{
+	min-width:1300px;
+	max-width:2000px;
+	height:800px;
+	position:relative;
+	}		
+.first-banner{
+	width:100%;
+	height:100%;
+	background:url(../images/banner.jpg) no-repeat;
+	background-size:100% auto;
+	}	
+.blue{
+	width:100%;
+	height:100%;
+	background-color:#5fafff;
+	position:absolute;
+	top:0;
+	left:0;
+	opacity:0.7;
+	}	
+.shouji{
+	position:absolute;
+	bottom:0;
+	left:-50px;
+    margin-left:-300px;
+	}	
+.biaoyu{
+	position:absolute;
+	top:250px;
+	right:-100px;
+	font-size:60px;
+	color:white;
+	font-weight:500;
+	}
+.load01{
+	position:absolute;
+	bottom:100px;
+	right:50px;
+    margin-right:-300px;
+	
+	}	
+.anzhuo{
+	float:left;
+	}
+.pingguo{
+	float:left;
+	}
+	
+/* 轮播 */					
+.second{
+    width: 100%;
+    height: auto;
+    position:relative;
+}
+/* CSS Document */
+.banner{ width:100%; height:750px; overflow:hidden; position:relative;font-size:0}
+.b-img{ height:500px;  position:absolute; left:0; top:0;}
+.b-img a{ display:block; height:750px; float:left;}
+.b-list{ height:50px; padding-top:700px; position:relative; margin:0 auto;z-index:1;}
+.b-list span{ display:block;cursor:pointer; width:14px; height:14px; border-radius:50%; border:3px solid #fff; float:left; margin:0 5px; _margin:0 3px;}
+.b-list .spcss{border:3px solid #14ab04;}
+.bar-left{ position:absolute; z-index:1; display:block; width:100px; height:100%; left:0px; background:none; top:0px; }
+.bar-right{ position:absolute;z-index:1; display:block; width:100px; height:100%; right:0px; background:none; top:0px; }
+.bar-left em{ display:block; width:50px; height:100px; background:url(../images/arrow.png) 0px 0px no-repeat; margin:0 auto; margin-top:325px;}
+.bar-right em{ display:block; width:50px; height:100px; background:url(../images/arrow.png) -50px 0px no-repeat; margin:0 auto; margin-top:325px;}
+.bar-left .emcss{ background-position:0px -100px;}
+.bar-right .emcss{ background-position:-50px -100px;}
+.sec-til{
+    font-size: 60px;
+    font-weight: 600;
+    width:100%;
+    text-align:center;
+    line-height: 60px;
+    margin-top:100px 
+}
+.sec-til02{
+    font-size:36px;
+    font-weight: 300;
+    width:100%;
+    text-align:center;
+    line-height: 36px;
+    margin-top:30px 
+}
+.third{
+    width: 100%;
+    height: 600px;
+    background-color:#5fafff;
+    overflow: hidden;
+    
+}
+.third-til{
+    width: 100%;
+    font-size: 48px;
+    margin-top: 60px;
+    text-align: center;
+    color: aliceblue;
+    font-weight: 600;
+}
+.third-con{
+    width:914px;
+    overflow: hidden;
+    margin:60px auto 0 auto;
+    color: aliceblue;
+    
+    
+}
+.third-one{
+    width:238px;
+    float: left;
+}
+.third-one-til{
+    margin-top: 30px;
+    font-size: 36px;
+    width: 100%;
+    text-align: center;
+    
+}
+.third-one-con{
+    margin-top: 10px;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    
+}
+.forth{
+    width: 100%;
+    height:505px;
+    margin-top:100px;
+}
+.forth-con{
+    width:802px;
+    margin:0 auto;
+    
+}
+.forth-one{
+    width:301px;
+    float:left;
+    
+}
+.foot{
+    width: 100%;
+    height: 100px;
+    background-color: #5fafff;
+    overflow: hidden;
+    color: aliceblue;
+}
+.tel{
+    width: 100%;
+    margin-top:20px;
+    text-align: center;
+    
+}
+

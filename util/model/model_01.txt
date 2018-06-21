@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>优惠券</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/vAlert.css"/>
+    <script type="text/javascript">
+        var _phoneW =  parseInt(window.screen.width),_phoneScale = _phoneW/640,ua = navigator.userAgent;
+        if (/Android (\d+\.\d+)/.test(ua)){
+            var version = parseFloat(RegExp.$1);
+            if(version>2.3){document.write('<meta name="viewport" content="width=640, initial-scale='+_phoneScale+', minimum-scale = '+_phoneScale+', maximum-scale = '+_phoneScale+', target-densitydpi=device-dpi">');
+            }else{document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');}
+        } else {document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');}
+    </script>
+    <style type="text/css">
+    	.activity_detail_text{
+    		padding: 0px 30px 0 30px;
+    		color: #ffffff;
+    		font-size: 24px;
+
+    	}
+    	input,button,textarea,a{
+    		outline: none;
+    	}
+    	.activity_detail_text>p{
+    		line-height: 36px;
+    	}
+    	.activity_detail_text>.title{
+    		
+    		margin-bottom: 30px;
+    	}
+    	.activity_detail_text>.canyufangshi{
+    		margin-bottom: 12px;
+    		font-weight: bold;
+    	}
+    	/*重写输入框和按钮的样式*/
+    	.phone,.btn{
+    		border-radius: 1.5rem;
+    		width: 40%;
+    		display: inline;
+    		margin-left: 4%;
+    		font-size: 26px;
+    	}
+    	.phone{
+    		width: 53%;
+    	}
+    	.btn{
+    		width: 33%;
+    		color: #ff0113;
+    		background: #ffc20a;
+    	}
+    	
+    	
+    </style>
+</head>
+<body style="background: #d7431c;">
+<img src="images/backgroundImg.png" width="100%" style="margin: 0 auto;" class="" />
+<!--文字区域-->
+<div class="activity_detail_text">
+	<p class="" style="font-weight: bold;">
+		 活动时间
+	</p>
+	<p class="title">2017年2月8日~2017年3月9日</p>
+	<p class="canyufangshi">参与方式</p>
+	<p>2017年2月8日~2017年3月9日</p>
+	<p>1. 即日起，用户成功注册后登录，即可获得价值88元的红包一个，可用于支付车费。</p>
+	<p>2. 红包可以在个人中心的优惠券中查看。</p>
+	<p>3. 红包可直接抵付车费，一次性支付，不设找零。</p>
+	<p>4. 系统发放可能存在延时，请大家耐心等候。</p>
+
+</div>
+
+<input type="number" class="phone" placeholder="请输入手机号" />
+<input type="button" class="btn" value="领取优惠券" />
+<br /><br /><br /><br /><br /><br />
+</body>
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/vAlert.js"></script>
+<!--JavaScript代码块-->
+<script type="text/javascript">
+
+/*$(".btn").click(function(){
+	vAlert("warning","您已经领取过优惠券！");
+});*/
+
+
+    $(function(){
+
+        var phone_param = "phone";
+        var get_coupon_status_url = "http://api.88gongxiang.com/api/v1/coupon/group/list";
+        var get_user_id_url = "http://api.88gongxiang.com/api/v1/common/findUserId";
+        var get_coupon_url = "http://api.88gongxiang.com/api/v1/coupon/bind";
+        var success_url = "http://api.88gongxiang.com/event/list.html";
+        var error_url = "http://api.88gongxiang.com/event/error.html";
+        var over_url = "http://api.88gongxiang.com/event/over.html";
+
+        var coupon_id = $flysLi0833;
+
+
+
+        function getCouponsCallback(data){
+            if(data.status == "SUCCESS"){
+                if($.isEmptyObject(data.content.content) || data.content.content.length == 0){
+					vAlert("warning","查询不到优惠券信息！")
+                }else{
+                    var hasCoupon = false;
+                    for(var i = 0; i < data.content.content.length; i++){
+                        var conArr = data.content.content[i];
+                        if(conArr.preCount > conArr.curCount){
+                            hasCoupon = true;
+                        }
+                    }
+                    if(!hasCoupon){
+                        vAlert("success","优惠券已发完！");
+                        //location.href = over_url;
+                    }
+                }
+            }else{
+				vAlert("warning","获取优惠券信息失败！");
+                //location.href = error_url;
+            }
+        }
+
+
+        // 基于优惠券id获取对应的优惠券发放数量
+        $.ajax({
+            type: "post",
+            url: get_coupon_status_url,
+            async : false,
+            data: {
+                params: JSON.stringify({
+                    ids: coupon_id,
+                    startTime: new Date().getTime()+"",
+                    page: 0,
+                    size: 10000
+                })
+            },
+            success: getCouponsCallback
+        });
+
+
+
+
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+
+        // 把url中的参数赋值到input中
+        var phoneNum = getQueryString(phone_param);
+
+        if(phoneNum != null){
+            $(".phone").val(phoneNum);
+        }
+
+
+        var user_id = "";
+        function getUserIdCallback(data){
+            if(data.id){
+                user_id = data.id;
+            }else{
+				vAlert("warning","用户登陆异常！");
+            }
+        }
+
+        function bindCouponCallback(data){
+            if(data.status == "SUCCESS"){
+
+                var isSuccess = false;
+                var errMessage = [];
+
+                for(var i = 0; i < data.content.length; i++){
+                    var contentArr = data.content[i];
+                    if(contentArr.result == "SUCCESS"){
+                        isSuccess = true;
+                    }else{
+                        errMessage.push(contentArr.message);
+                    }
+                }
+
+                if(isSuccess){
+                    vAlert("success","获取优惠券成功！")
+                    //location.href = success_url + "?id=" + user_id;
+                }else{
+					vAlert("warning",errMessage[0]);
+                }
+            }else if(data.status == "FAIL"){
+				vAlert("warning",data.message);
+            }else{
+				vAlert("warning","获取优惠券异常！");
+            }
+        }
+
+        $(".btn").click(function(){
+            var phoneVal = $(".phone").val();
+           // alert(phoneVal);
+            if(phoneVal == ""){
+                vAlert("warning","请输入手机号")
+            }
+
+            if(!/^0?(13|14|15|18)[0-9]{9}$/.test(phoneVal)){
+                vAlert("warning","请输入正确的手机号")
+            }
+
+            // 获取用户id
+            $.ajax({
+                type: "get",
+                async : false,
+                url: get_user_id_url,
+                data: {
+                    mobile: phoneVal
+                },
+                dataType: 'json',
+                success: getUserIdCallback
+            });
+
+            // 判断用户id是否获取成功
+            if(user_id == null || user_id == ""){
+				vAlert("warning","获取用户ID失败！");
+            }else{
+                // 绑定优惠券
+                $.ajax({
+                    type: "post",
+                    url: get_coupon_url,
+                    data: {
+                        params: JSON.stringify({
+                            ids: coupon_id,
+                            userId: user_id
+                        })
+                    },
+                    success: bindCouponCallback
+                });
+            }
+
+        });
+
+
+    });
+</script>
+</html>

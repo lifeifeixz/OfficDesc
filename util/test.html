@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>生成整体页面</title>
+	</head>
+	<body>
+		<input type="button" id="gener" value="生成按钮" />
+		
+	</body>
+	<script src="javaScript/jquery-2.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(ready);
+		
+		$("#gener").click(generPage);
+		
+		function ready(){
+			
+		}
+		
+		function generPage(){
+			$.get("model/model_01.txt",function(html){
+				alert(html);
+			})
+		}
+		
+	</script>
+</html>
