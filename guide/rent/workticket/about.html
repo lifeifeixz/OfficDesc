@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>派单APP使用手册</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f6f6f6;
+        }
+
+        .box {
+            /*width: 96%;*/
+            margin: 0 auto;
+            padding-top: 15px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 50px;
+        }
+
+        .box>.xy {
+            position: relative;
+            padding-left: 20px;
+            padding-right: 5%;
+            background: #ffffff;
+            /*border-bottom: 1px solid #e6e6e6;*/
+            height: 80px;
+            line-height: 80px;
+            color: #7a7a7a;
+            overflow: hidden;
+            font-size: 18px;
+            margin-bottom: 10px;
+            border-radius: 3px;
+        }
+
+        .box>.xy:hover {
+            /*background: #e4e4e4;*/
+            color: #4bb4e9;
+        }
+
+        .box>.xy>.text {
+            float: left;
+        }
+
+        .box>.xy>.do {
+            /*float: right;*/
+            position: absolute;
+            width: 8px;
+            top: 2px;
+            right: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <div class="xy" onclick="go('navs/usecar.html')">
+        <div class="text">用车规则</div>
+        <div class="do"> <img width="100%" src="../imgs/jiantou_gray@2x.png" /></div>
+    </div>
+    <div class="xy" onclick="go('navs/cost.html')">
+        <div class="text">费用相关</div>
+        <div class="do"> <img width="100%" src="../imgs/jiantou_gray@2x.png" /></div>
+    </div>
+    <div class="xy" onclick="go('navs/urgent.html')">
+        <div class="text">紧急事务相关</div>
+        <div class="do"> <img width="100%" src="../imgs/jiantou_gray@2x.png" /></div>
+    </div>
+
+    <!--<div style="width: 80%;margin: 0 auto;font-size: 12Px;font-weight:600;color: #A8A8A8;margin-top: 10%;">
+        服务电话:&nbsp;021-22011427<br /> 服务时间:&nbsp;周一至周五09:30 - 18:30<br /> 客服邮箱:&nbsp;service@88gongxiang.com </div>-->
+</div>
+</body>
+
+<!--JavaScript代码块-->
+<script type="text/javascript">
+    function go(page) {
+        window.location.href = page;
+    }
+</script>
+
+</html>
