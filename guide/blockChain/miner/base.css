@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    padding: 0;
+    color: #666;
+}
+
+h3 {
+    margin: 5% auto;
+    text-align: center;
+    color: #222;
+}
+
+h5 {
+    margin: 2% auto;
+    color: #222;
+    font-size: 16px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+@media screen and (min-width: 1201px) {
+    div{
+        width: 40%;
+        margin:0 auto;
+    }
+}
