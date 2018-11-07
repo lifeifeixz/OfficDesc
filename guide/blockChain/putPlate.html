@@ -2,18 +2,199 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="format-detection" content="telephone=yes" />
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-	<title>我要投牌</title>
-	<link rel="stylesheet" href="miner/base.css">
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=yes"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>我要投牌</title>
+    <link rel="stylesheet" href="miner/base.css">
+    <style>
+        #box {
+            position: relative;
+        }
+
+        .jiantou {
+            width: 100%;
+            position: absolute;
+            top: 40%;
+        }
+
+        .arrow_box {
+            width: 30px;
+            height: 30px;
+            margin: 20px 0;
+            position: relative;
+            cursor: pointer;
+        }
+
+        /*左箭头*/
+        .left {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 2;
+            /*兼容ie8-*/
+            /*border:1px solid blue;
+    */
+        }
+
+        .left-arrow1, .left-arrow2 {
+            width: 0;
+            height: 0;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 5;
+            /*兼容ie8-*/
+            border-top: 10px transparent dashed;
+            border-left: 10px transparent dashed;
+            border-bottom: 10px transparent dashed;
+            border-right: 10px white solid;
+            overflow: hidden;
+        }
+
+        .left-arrow1 {
+            border-right: 10px #333 solid;
+        }
+
+        .left-arrow2 {
+            left: 1px;
+            /*重要*/
+            border-right: 10px #fff solid;
+        }
+
+    </style>
 </head>
 
 <body>
-<div>
-	<img width="100%" height="100%" src="imgs/putPlate.png" alt="">
+<div id="box">
+    <img width="100%" height="100%" onclick="goNative()" src="imgs/putPlate.png" alt="">
+    <div class="jiantou">
+        <div class="arrow_zuo arrow_box">
+            <b class="left"><i class="left-arrow1"></i><i class="left-arrow2"></i></b>
+        </div>
+    </div>
 </div>
 </body>
 <script type="text/javascript">
+    (function (window) {
+        var android = "ANDROID";
+        var ios = "IOS";
+        var system = {
+            getSystemType: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+                var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+                if (isAndroid) {
+                    return android;
+                }
+                if (isIOS) {
+                    return ios;
+                }
+            }
+        }
+        var EventUtil = {
+            addHandler: function (element, type, handler) {
+                if (element.addEventListener)
+                    element.addEventListener(type, handler, {passive: false});
+                else if (element.attachEvent)
+                    element.attachEvent("on" + type, handler);
+                else
+                    element["on" + type] = handler;
+            },
+            removeHandler: function (element, type, handler) {
+                if (element.removeEventListener)
+                    element.removeEventListener(type, handler, {passive: false});
+                else if (element.detachEvent)
+                    element.detachEvent("on" + type, handler);
+                else
+                    element["on" + type] = handler;
+            },
+            /**
+             * 监听触摸的方向
+             * @param target            要绑定监听的目标元素
+             * @param isPreventDefault  是否屏蔽掉触摸滑动的默认行为（例如页面的上下滚动，缩放等）
+             * @param upCallback        向上滑动的监听回调（若不关心，可以不传，或传false）
+             * @param rightCallback     向右滑动的监听回调（若不关心，可以不传，或传false）
+             * @param downCallback      向下滑动的监听回调（若不关心，可以不传，或传false）
+             * @param leftCallback      向左滑动的监听回调（若不关心，可以不传，或传false）
+             */
+            listenTouchDirection: function (target, isPreventDefault, upCallback, rightCallback, downCallback, leftCallback) {
+                this.addHandler(target, "touchstart", handleTouchEvent);
+                this.addHandler(target, "touchend", handleTouchEvent);
+                this.addHandler(target, "touchmove", handleTouchEvent);
+                var startX;
+                var startY;
+
+                function handleTouchEvent(event) {
+                    switch (event.type) {
+                        case "touchstart":
+                            startX = event.touches[0].pageX;
+                            startY = event.touches[0].pageY;
+                            break;
+                        case "touchend":
+                            var spanX = event.changedTouches[0].pageX - startX;
+                            var spanY = event.changedTouches[0].pageY - startY;
+
+                            if (Math.abs(spanX) > Math.abs(spanY)) {      //认定为水平方向滑动
+                                if (spanX > 30) {         //向右
+                                    if (rightCallback)
+                                        rightCallback();
+                                } else if (spanX < -30) { //向左
+                                    if (leftCallback)
+                                        leftCallback();
+                                }
+                            } else {                                    //认定为垂直方向滑动
+                                if (spanY > 30) {         //向下
+                                    if (downCallback)
+                                        downCallback();
+                                } else if (spanY < -30) {//向上
+                                    if (upCallback)
+                                        upCallback();
+                                }
+                            }
+
+                            break;
+                        case "touchmove":
+                            //阻止默认行为
+                            if (isPreventDefault)
+                                event.preventDefault();
+                            break;
+                    }
+                }
+            }
+        };
+        window.EventUtil = EventUtil;
+        window.system = system;
+    })(window);
+    function goNative() {
+        //安卓
+        switch (system.getSystemType()) {
+            case "ANDROID":
+                javascript:GXJSBridge.JSPutPlateNative();
+                break;
+            case "IOS":
+                window.webkit.messageHandlers.JSPutPlateNative.postMessage('');
+                break;
+        }
+    }
+
+    function left() {
+        console.log("左。。。")
+        goNative();
+    }
+    function right() {
+        console.log("右。。。")
+    }
+    function up() {
+        console.log("上。。。")
+    }
+    function down() {
+        console.log("下。。。")
+    }
+    EventUtil.listenTouchDirection(document, true, up, right, down, left)
 </script>
 </html>
