@@ -14,69 +14,24 @@
         }
 
         .jiantou {
-            width: 100%;
             position: absolute;
-            top: 40%;
+            bottom: 50%;
+            right: -5%;
         }
 
-        .arrow_box {
-            width: 30px;
-            height: 30px;
-            margin: 20px 0;
-            position: relative;
-            cursor: pointer;
+        .jiantou-icon {
+            -webkit-transform: rotate(-90deg);
         }
-
-        /*左箭头*/
-        .left {
-            width: 20px;
-            height: 20px;
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: 2;
-            /*兼容ie8-*/
-            /*border:1px solid blue;
-    */
-        }
-
-        .left-arrow1, .left-arrow2 {
-            width: 0;
-            height: 0;
-            display: block;
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: 5;
-            /*兼容ie8-*/
-            border-top: 10px transparent dashed;
-            border-left: 10px transparent dashed;
-            border-bottom: 10px transparent dashed;
-            border-right: 10px white solid;
-            overflow: hidden;
-        }
-
-        .left-arrow1 {
-            border-right: 10px #333 solid;
-        }
-
-        .left-arrow2 {
-            left: 1px;
-            /*重要*/
-            border-right: 10px #fff solid;
-        }
-
     </style>
 </head>
 
 <body>
 <div id="box">
-    <img width="100%" height="100%" onclick="goNative()" src="imgs/putPlate.png" alt="">
+    <img width="100%" onclick="goNative()" src="imgs/putPlate.png" alt="">
     <div class="jiantou">
-        <div class="arrow_zuo arrow_box">
-            <b class="left"><i class="left-arrow1"></i><i class="left-arrow2"></i></b>
-        </div>
+        <img class="jiantou-icon" src="imgs/jiantou.png" alt="">
     </div>
+    <div style="width: 100%;height: 6px;"></div>
 </div>
 </body>
 <script type="text/javascript">
