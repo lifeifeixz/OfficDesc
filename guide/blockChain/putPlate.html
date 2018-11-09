@@ -11,6 +11,8 @@
         #box {
             position: relative;
             background-color: #0f0058;
+            width: 100%;
+            height: 100vh;
         }
         
         .jiantou {
@@ -21,38 +23,16 @@
             position: absolute;
             bottom: 50%;
             right: 5%;
-            -webkit-animation: 1s shackbody;
+            -webkit-animation: 2s shackbody infinite;
         }
         
         @-webkit-keyframes shackbody {
-            0%,
-            20% {
-                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-                transform: translate3d(0, 0, 0);
-            }
-            40%,
-            43% {
-                animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-                transform: translate3d(-80px, 0，0);
-            }
-            53% {
-                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-                transform: translate3d(0, 0, 0);
-            }
-            70% {
-                animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-                transform: translate3d(-60px, 0, 0);
-            }
-            80% {
-                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-                transform: translate3d(0, 0, 0);
-            }
-            90% {
-                transform: translate3d(-34px, 0, 0);
+            50% {
+                opacity: 1;
             }
             100% {
-                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-                transform: translate3d(0, 0, 0);
+                transform: translateX(30px);
+                opacity: 0;
             }
         }
     </style>
@@ -64,7 +44,7 @@
         <div class="jiantou">
             <img class="jiantou-icon" src="imgs/jiantou.png" alt="">
         </div>
-        <!--<div style="width: 100%;height: 6px;"></div>-->
+        <div style="width: 100%;height: 6px;"></div>
     </div>
 </body>
 <script type="text/javascript">
@@ -154,7 +134,7 @@
                         case "touchmove":
                             //阻止默认行为
                             if (isPreventDefault)
-//                                event.preventDefault();
+                                event.preventDefault();
                             break;
                     }
                 }
