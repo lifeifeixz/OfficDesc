@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="format-detection" content="telephone=yes" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=yes"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
     <title>我要投牌</title>
     <link rel="stylesheet" href="miner/base.css">
     <style>
@@ -14,18 +15,18 @@
             width: 100%;
             height: 100vh;
         }
-        
+
         .jiantou {
             /* right: -5%; */
         }
-        
+
         .jiantou-icon {
             position: absolute;
             bottom: 50%;
             right: 5%;
             -webkit-animation: 2s shackbody infinite;
         }
-        
+
         @-webkit-keyframes shackbody {
             50% {
                 opacity: 1;
@@ -39,20 +40,30 @@
 </head>
 
 <body>
-    <div id="box">
-        <img style="width:100%;" onclick="goNative()" src="imgs/putPlate.png" alt="">
-        <div class="jiantou">
-            <img class="jiantou-icon" src="imgs/jiantou.png" alt="">
-        </div>
-        <div style="width: 100%;height: 6px;"></div>
+<div id="box">
+    <img style="width:100%;" onclick="goNative()" src="imgs/putPlate.png" alt="">
+    <div class="jiantou">
+        <img class="jiantou-icon" src="imgs/jiantou.png" alt="">
     </div>
+    <div style="width: 100%;height: 6px;"></div>
+</div>
 </body>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?b666915bc3381fd60a8c65980cde0e7b";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
 <script type="text/javascript">
-    (function(window) {
+    (function (window) {
         var android = "ANDROID";
         var ios = "IOS";
         var system = {
-            getSystemType: function() {
+            getSystemType: function () {
                 var u = navigator.userAgent,
                     app = navigator.appVersion;
                 var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
@@ -66,7 +77,7 @@
             }
         }
         var EventUtil = {
-            addHandler: function(element, type, handler) {
+            addHandler: function (element, type, handler) {
                 if (element.addEventListener)
                     element.addEventListener(type, handler, {
                         passive: false
@@ -76,7 +87,7 @@
                 else
                     element["on" + type] = handler;
             },
-            removeHandler: function(element, type, handler) {
+            removeHandler: function (element, type, handler) {
                 if (element.removeEventListener)
                     element.removeEventListener(type, handler, {
                         passive: false
@@ -95,7 +106,7 @@
              * @param downCallback      向下滑动的监听回调（若不关心，可以不传，或传false）
              * @param leftCallback      向左滑动的监听回调（若不关心，可以不传，或传false）
              */
-            listenTouchDirection: function(target, isPreventDefault, upCallback, rightCallback, downCallback, leftCallback) {
+            listenTouchDirection: function (target, isPreventDefault, upCallback, rightCallback, downCallback, leftCallback) {
                 this.addHandler(target, "touchstart", handleTouchEvent);
                 this.addHandler(target, "touchend", handleTouchEvent);
                 this.addHandler(target, "touchmove", handleTouchEvent);
