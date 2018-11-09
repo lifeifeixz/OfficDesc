@@ -1,0 +1,7 @@
+已预约	INIT
+已支付	PAID
+已分配	ASSIGNED
+已取车	TOKEN
+已验车	VALIDATED
+已完成	FINISHED
+已取消	CANCELED
